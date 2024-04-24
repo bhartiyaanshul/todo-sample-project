@@ -1,0 +1,16 @@
+.todo-container {
+    display: flex;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-title {
+    flex: 1;
+}
+
+.todo-title.completed {
+    text-decoration: line-through;
+}
