@@ -27,19 +27,19 @@ function TodoPage(){
         })
     }
 
-    function handleCheckChange(){
-        setTodos((val)=>{
-            return val.map((todo,index)=>{
-                if(todo.title == e){
-                    return(
+    function handleCheckChange(e) {
+        setTodos((val) => {
+            return val.map((todo, index) => {
+                if (todo.title === e) {
+                    return {
                         ...todo,
-                        status: todo.status == 
-                    )
+                        status: todo.status === "pending" ? "completed" : "pending"
+                    }
                 }
+                return todo
             })
         })
     }
-
 
     return(
         <div>
@@ -49,7 +49,7 @@ function TodoPage(){
             </div>
             {
                 todos.map((todo, index)=>{
-                    return <Todo key={index} todo={todo} onCheckChange={handleAddTodo=>}onDelete={()=>handleDeleteTodo(todo.title)}/>
+                    return <Todo key={index} todo={todo} onCheckChange={() => state.handleCheckChange(todo.title)} onDelete={() => state.handleDeleteTodo(todo.title)} />
                 }
             )
         }
